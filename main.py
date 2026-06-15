@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import os
 
 app = Flask(__name__)
 
@@ -24,4 +25,7 @@ def essence():
     return render_template('essence.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Считываем порт, который выдает Render, либо берем 5000 для локальных тестов
+    port = int(os.environ.get("PORT", 5000))
+    # Запуск на хосте 0.0.0.0 обязателен для работы в облаке
+    app.run(host='0.0.0.0', port=port)
