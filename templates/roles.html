@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div lang="ru">
+        <h1>Иерархия и Роли</h1>
+        <div style="text-align: center; margin-bottom: 30px; background: rgba(209, 168, 79, 0.15); padding: 15px; border-radius: 12px; border: 1px solid #d1a84f;">
+            <h2 style="margin: 0; color: #d1a84f; text-transform: uppercase; letter-spacing: 1px;">👑 Глав Совет</h2>
+            <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #fff;">Высшее руководство организации ССУ</p>
+        </div>
+        <p>Начальный статус для каждого нового участника: <strong>«Доброволец»</strong></p>
+        <div class="roles-wrapper">
+            <div class="role-column">
+                <h3>Линия 1: Модерация</h3>
+                <ul>
+                    <li>Стажер чата</li>
+                    <li>Модератор чата</li>
+                    <li>Админ. чата</li>
+                    <li>Начальник чата</li>
+                </ul>
+            </div>
+            <div class="role-column">
+                <h3>Линия 2: Организация</h3>
+                <ul>
+                    <li>Отдел документов</li>
+                    <li>Диспетчер</li>
+                    <li>Администратор порядка</li>
+                    <li>СПР (Совет Принятия Решений)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div lang="en">
+        <h1>Hierarchy and Roles</h1>
+        <div style="text-align: center; margin-bottom: 30px; background: rgba(209, 168, 79, 0.15); padding: 15px; border-radius: 12px; border: 1px solid #d1a84f;">
+            <h2 style="margin: 0; color: #d1a84f; text-transform: uppercase; letter-spacing: 1px;">👑 Main Council</h2>
+            <p style="margin: 5px 0 0 0; font-size: 0.95rem; color: #fff;">Supreme leadership of the SSU organization</p>
+        </div>
+        <p>Initial status for every new member: <strong>"Volunteer"</strong></p>
+        <div class="roles-wrapper">
+            <div class="role-column">
+                <h3>Line 1: Moderation</h3>
+                <ul>
+                    <li>Chat Trainee</li>
+                    <li>Chat Moderator</li>
+                    <li>Chat Admin</li>
+                    <li>Chat Head</li>
+                </ul>
+            </div>
+            <div class="role-column">
+                <h3>Line 2: Organization</h3>
+                <ul>
+                    <li>Document Dept</li>
+                    <li>Dispatcher</li>
+                    <li>Order Administrator</li>
+                    <li>JDM (Joint Decision-Making Council)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

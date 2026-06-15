@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ССУ Организация</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <a href="/intro">
+            <span class="lang-ru">Ознакомление</span>
+            <span class="lang-en">Intro</span>
+        </a>
+        <a href="/rules">
+            <span class="lang-ru">Правила</span>
+            <span class="lang-en">Rules</span>
+        </a>
+        <a href="/roles">
+            <span class="lang-ru">Роли</span>
+            <span class="lang-en">Roles</span>
+        </a>
+        <a href="/channels">
+            <span class="lang-ru">Каналы</span>
+            <span class="lang-en">Channels</span>
+        </a>
+        <a href="/essence">
+            <span class="lang-ru">Суть</span>
+            <span class="lang-en">Essence</span>
+        </a>
+        <button class="lang-switch" id="langBtn">ENG</button>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script>
+        const langBtn = document.getElementById('langBtn');
+
+        // Функция проверки и применения языка
+        function applyLanguage() {
+            const currentLang = localStorage.getItem('siteLang') || 'ru';
+            if (currentLang === 'en') {
+                document.body.classList.add('eng-mode');
+                langBtn.textContent = 'RUS';
+            } else {
+                document.body.classList.remove('eng-mode');
+                langBtn.textContent = 'ENG';
+            }
+        }
+
+        // Проверяем язык при каждой загрузке страницы
+        applyLanguage();
+
+        // Клик по кнопке переключения
+        langBtn.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('siteLang') || 'ru';
+            const newLang = currentLang === 'ru' ? 'en' : 'ru';
+            localStorage.setItem('siteLang', newLang);
+            applyLanguage();
+        });
+    </script>
+</body>
+</html>
